@@ -1,0 +1,24 @@
+#!/bin/bash
+set -e
+cd "$(dirname "${BASH_SOURCE[0]}")/.."
+source .env
+
+usage() {
+  echo "Usage: run <command> [options]"
+}
+
+COMMAND="$1"
+shift
+if [[ -z "$COMMAND" ]]; then
+  usage
+  exit 2
+fi
+
+GOFILE="cmd/$COMMAND/main.go"
+if [[ ! -f "$GOFILE" ]]; then
+  usage
+  echo "Error: no such file $GOFILE"
+  exit 2
+fi
+
+exec go run "$GOFILE" "$@"
