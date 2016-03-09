@@ -1,2 +1,5 @@
 # Example settings don't go in the repo
 /.env
+
+# Do not include vendor since we use glide
+/vendor

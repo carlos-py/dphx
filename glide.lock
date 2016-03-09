@@ -1,0 +1,15 @@
+hash: c11f65b438b0551aff8e29d0a56373edfda4e858f2fb8b8f424f3e01af8862b0
+updated: 2016-03-09T03:39:20.381218832+03:00
+imports:
+- name: github.com/MOZGIII/go-socks5
+  version: 385bbe4759e6795fe5a1eace7fb860cf4ee8d59e
+- name: golang.org/x/crypto
+  version: 5dc8cb4b8a8eb076cbb5a06bc3b8682c15bdbbd3
+  subpackages:
+  - ssh
+  - curve25519
+- name: golang.org/x/net
+  version: a4bbce9fcae005b22ae5443f6af064d80a6f5a55
+  subpackages:
+  - context
+devImports: []
