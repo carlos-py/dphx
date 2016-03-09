@@ -8,11 +8,12 @@ usage() {
 }
 
 COMMAND="$1"
-shift
+
 if [[ -z "$COMMAND" ]]; then
   usage
   exit 2
 fi
+shift
 
 GOFILE="cmd/$COMMAND/main.go"
 if [[ ! -f "$GOFILE" ]]; then
