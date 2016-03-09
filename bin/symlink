@@ -1,0 +1,6 @@
+#!/bin/bash
+set -e
+cd "$(dirname "${BASH_SOURCE[0]}")/.."
+GOPATH_LINK="$GOPATH/src/github.com/MOZGIII/dphx"
+mkdir -p "$(dirname $GOPATH_LINK)"
+ln -sfT "$(pwd)" "$GOPATH_LINK"
