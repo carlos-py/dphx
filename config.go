@@ -2,8 +2,8 @@ package dphx
 
 // Config loads and saves config.
 type Config struct {
-	Username   string
-	Password   string
-	ServerAddr string
-	LocalAddr  string
+	Username   string // SSH user
+	Password   string // SSH pass
+	ServerAddr string // SSH addr
+	LocalAddr  string // SOCKS listen addr
 }
