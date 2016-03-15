@@ -51,12 +51,8 @@ func SSHDial(ctx context.Context, network, addr string) (net.Conn, error) {
 
 	// Replace the address with the original address before local
 	// DNS resolution.
-	originalAddress := ctx.Value("originalAddress")
-	if originalAddress != nil {
-		originalAddressTyped, ok := originalAddress.(OriginalAddress)
-		if ok {
-			host = originalAddressTyped.String()
-		}
+	if newHost := fetchOriginalAddress(ctx); newHost != "" {
+		host = newHost
 	}
 
 	addr = net.JoinHostPort(host, portString)
