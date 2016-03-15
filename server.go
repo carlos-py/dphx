@@ -2,16 +2,17 @@ package dphx
 
 import (
 	"log"
-	"os"
 
 	"github.com/MOZGIII/go-socks5"
+	"github.com/kelseyhightower/envconfig"
 )
 
-var appConfig = Config{
-	Username:   os.Getenv("DPHX_SSH_USER"),
-	Password:   os.Getenv("DPHX_SSH_PASSWORD"),
-	ServerAddr: os.Getenv("DPHX_SSH_ADDR"),
-	LocalAddr:  os.Getenv("DPHX_SOCKS_ADDR"),
+var appConfig Config
+
+// Run initializes config and starts SOCKS server.
+func Run() {
+	envconfig.MustProcess("DPHX", &appConfig)
+	ListenAndServe()
 }
 
 // ListenAndServe starts the SOCKS server.

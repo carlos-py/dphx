@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	dphx.ListenAndServe()
+	dphx.Run()
 }
