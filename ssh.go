@@ -2,6 +2,7 @@ package dphx
 
 import (
 	"fmt"
+	"log"
 	"net"
 
 	"golang.org/x/crypto/ssh"
@@ -18,6 +19,9 @@ func createSSHClient() (*ssh.Client, error) {
 			ssh.Password(appConfig.Password),
 		},
 	}
+
+	log.Printf("Connecting to SSH at %s", appConfig.ServerAddr)
+
 	client, err := ssh.Dial("tcp", appConfig.ServerAddr, sshConfig)
 	if err != nil {
 		return nil, fmt.Errorf("Failed to dial to SSH server: %s", err.Error())
