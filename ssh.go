@@ -12,17 +12,15 @@ import (
 var sshClient *ssh.Client
 
 func createSSHClient() (*ssh.Client, error) {
-	// Only password auth is supported so far.
-	sshConfig := &ssh.ClientConfig{
-		User: appConfig.Username,
-		Auth: []ssh.AuthMethod{
-			ssh.Password(appConfig.Password),
-		},
+	sshConfig, err := appConfig.SSH.ClientConfig()
+
+	if err != nil {
+		return nil, err
 	}
 
-	log.Printf("Connecting to SSH at %s", appConfig.ServerAddr)
+	log.Printf("Connecting to SSH at %s", appConfig.SSH.ServerAddr)
 
-	client, err := ssh.Dial("tcp", appConfig.ServerAddr, sshConfig)
+	client, err := ssh.Dial("tcp", appConfig.SSH.ServerAddr, sshConfig)
 	if err != nil {
 		return nil, fmt.Errorf("Failed to dial to SSH server: %s", err.Error())
 	}

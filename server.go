@@ -4,16 +4,9 @@ import (
 	"log"
 
 	"github.com/MOZGIII/go-socks5"
-	"github.com/kelseyhightower/envconfig"
 )
 
-var appConfig Config
-
-// Run initializes config and starts SOCKS server.
-func Run() {
-	envconfig.MustProcess("DPHX", &appConfig)
-	ListenAndServe()
-}
+var appConfig AppConfig
 
 // ListenAndServe starts the SOCKS server.
 func ListenAndServe() {
