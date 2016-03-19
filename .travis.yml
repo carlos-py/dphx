@@ -13,8 +13,8 @@ env:
   - GIMME_OS=windows GIMME_ARCH=386
 
 install:
-  - bin/getglide
-  - glide install
+  - bin/getgodep
+  - godep restore
 
 script:
   - go build -v ./cmd/dphx
