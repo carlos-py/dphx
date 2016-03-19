@@ -11,4 +11,4 @@ script:
   - go build -v ./cmd/dphx
 
 after_success:
-  - gox -output "dist/dphx_{{.OS}}_{{.Arch}}_{{.Dir}}"
+  - gox -output "dist/dphx_{{.OS}}_{{.Arch}}_{{.Dir}}" ./cmd/dphx
