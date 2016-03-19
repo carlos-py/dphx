@@ -15,6 +15,7 @@ env:
 install:
   - bin/getglide
   - glide install
+  - bin/symlink
 
 script:
   - go build -v ./cmd/dphx
