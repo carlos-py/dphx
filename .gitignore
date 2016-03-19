@@ -3,3 +3,6 @@
 
 # Do not include vendor since we use glide
 /vendor
+
+# Do not include built binaries
+/dist
