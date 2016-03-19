@@ -17,4 +17,4 @@ install:
   - glide install
 
 script:
-  - go build -v ./...
+  - go build -v ./cmd/dphx
