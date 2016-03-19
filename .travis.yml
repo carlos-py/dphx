@@ -9,6 +9,3 @@ install:
 
 script:
   - go build -v ./cmd/dphx
-
-notifications:
-  email: false
