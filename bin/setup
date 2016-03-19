@@ -2,7 +2,7 @@
 set -e
 cd "$(dirname "${BASH_SOURCE[0]}")/.."
 
-# Install dev packages
+# Install dev tools
 go get -v -u \
   github.com/mitchellh/gox
 
