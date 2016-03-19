@@ -1,0 +1,32 @@
+{
+	"ImportPath": "github.com/MOZGIII/dphx",
+	"GoVersion": "go1.6",
+	"GodepVersion": "v60",
+	"Deps": [
+		{
+			"ImportPath": "github.com/MOZGIII/go-socks5",
+			"Rev": "385bbe4759e6795fe5a1eace7fb860cf4ee8d59e"
+		},
+		{
+			"ImportPath": "github.com/kelseyhightower/envconfig",
+			"Comment": "1.1.0-12-gdd8b03c",
+			"Rev": "dd8b03cb32326184ec2606104cd442e34bd272fd"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/curve25519",
+			"Rev": "6025851c7c2bf210daf74d22300c699b16541847"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/ssh",
+			"Rev": "6025851c7c2bf210daf74d22300c699b16541847"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/ssh/agent",
+			"Rev": "6025851c7c2bf210daf74d22300c699b16541847"
+		},
+		{
+			"ImportPath": "golang.org/x/net/context",
+			"Rev": "35b06af0720201bc2f326773a80767387544f8c4"
+		}
+	]
+}
