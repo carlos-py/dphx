@@ -4,6 +4,9 @@ cd "$(dirname "${BASH_SOURCE[0]}")/.."
 
 # Install dev tools
 go get -v -u \
-  github.com/mitchellh/gox
+  github.com/mitchellh/gox \
+  github.com/Masterminds/glide
+
+glide install
 
 go get -v ./...
