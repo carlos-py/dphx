@@ -116,27 +116,11 @@ check-all-pushed() {
 check-all-commited() {
   echo "==> Ensuring everything is commited"
 
-  # Update the index
-  git update-index -q --ignore-submodules --refresh
-  ERR=0
+  STATUS="$(git status --porcelain)"
 
-  # Disallow unstaged changes in the working tree
-  if ! git diff-files --quiet --ignore-submodules --; then
-    error "Error: you have unstaged changes"
-    git diff-files --name-status -r --ignore-submodules -- >&2
-    ERR=1
-  fi
-
-  # Disallow uncommitted changes in the index
-  if ! git diff-index --cached --quiet HEAD --ignore-submodules --; then
-    error "Error: your index contains uncommitted changes"
-    git diff-index --cached --name-status -r --ignore-submodules HEAD -- >&2
-    ERR=1
-  fi
-
-  # Crash on error
-  if [ "$ERR" == "1" ]; then
-    error "Please commit or stash them"
+  if [[ -n "$STATUS" ]]; then
+    error "Error: you have uncommited files, commit or stash them"
+    error "$STATUS"
     exit 1
   fi
 }
