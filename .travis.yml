@@ -13,8 +13,7 @@ env:
   - GIMME_OS=windows GIMME_ARCH=386
 
 install:
-  - bin/getgodep
-  - godep restore
+  - bin/setup
 
 script:
   - go build -v ./cmd/dphx
