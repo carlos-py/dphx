@@ -9,20 +9,20 @@
 		},
 		{
 			"ImportPath": "github.com/kelseyhightower/envconfig",
-			"Comment": "1.1.0-12-gdd8b03c",
-			"Rev": "dd8b03cb32326184ec2606104cd442e34bd272fd"
+			"Comment": "1.1.0-15-gcea0863",
+			"Rev": "cea086319492c3940683ea5e122aa5de70a33923"
 		},
 		{
 			"ImportPath": "golang.org/x/crypto/curve25519",
-			"Rev": "6025851c7c2bf210daf74d22300c699b16541847"
+			"Rev": "c197bcf24cde29d3f73c7b4ac6fd41f4384e8af6"
 		},
 		{
 			"ImportPath": "golang.org/x/crypto/ssh",
-			"Rev": "6025851c7c2bf210daf74d22300c699b16541847"
+			"Rev": "c197bcf24cde29d3f73c7b4ac6fd41f4384e8af6"
 		},
 		{
 			"ImportPath": "golang.org/x/crypto/ssh/agent",
-			"Rev": "6025851c7c2bf210daf74d22300c699b16541847"
+			"Rev": "c197bcf24cde29d3f73c7b4ac6fd41f4384e8af6"
 		},
 		{
 			"ImportPath": "golang.org/x/net/context",
