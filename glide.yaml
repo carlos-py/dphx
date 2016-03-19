@@ -1,0 +1,12 @@
+package: github.com/MOZGIII/dphx
+import:
+- package: golang.org/x/net
+  subpackages:
+  - context
+- package: github.com/kelseyhightower/envconfig
+- package: golang.org/x/crypto
+  subpackages:
+  - curve25519
+  - ssh
+  - ssh/agent
+- package: github.com/MOZGIII/go-socks5

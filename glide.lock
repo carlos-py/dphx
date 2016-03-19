@@ -1,0 +1,18 @@
+hash: b296f614465e1a38fa8b9ed90a9b039a7ce91abf13763348237357b9e0f59dc0
+updated: 2016-03-19T18:29:31.284637505+03:00
+imports:
+- name: github.com/kelseyhightower/envconfig
+  version: cea086319492c3940683ea5e122aa5de70a33923
+- name: github.com/MOZGIII/go-socks5
+  version: 385bbe4759e6795fe5a1eace7fb860cf4ee8d59e
+- name: golang.org/x/crypto
+  version: c197bcf24cde29d3f73c7b4ac6fd41f4384e8af6
+  subpackages:
+  - curve25519
+  - ssh
+  - ssh/agent
+- name: golang.org/x/net
+  version: 35b06af0720201bc2f326773a80767387544f8c4
+  subpackages:
+  - context
+devImports: []
