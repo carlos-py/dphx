@@ -15,7 +15,9 @@ env:
 install:
   - bin/getglide
   - glide install
-  - bin/symlink
 
 script:
   - go build -v ./cmd/dphx
+
+after_success:
+  - gox -output "dist/{{.OS}}_{{.Arch}}_{{.Dir}}"
