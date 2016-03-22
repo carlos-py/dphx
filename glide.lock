@@ -1,8 +1,10 @@
 hash: b296f614465e1a38fa8b9ed90a9b039a7ce91abf13763348237357b9e0f59dc0
-updated: 2016-03-19T18:29:31.284637505+03:00
+updated: 2016-03-23T00:37:36.189812122+03:00
 imports:
 - name: github.com/kelseyhightower/envconfig
   version: cea086319492c3940683ea5e122aa5de70a33923
+- name: github.com/MOZGIII/dphx
+  version: 46b429f8927eeab2216869382c97a9458e87f9fe
 - name: github.com/MOZGIII/go-socks5
   version: 385bbe4759e6795fe5a1eace7fb860cf4ee8d59e
 - name: golang.org/x/crypto
