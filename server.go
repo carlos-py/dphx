@@ -3,7 +3,7 @@ package dphx
 import (
 	"log"
 
-	"github.com/MOZGIII/go-socks5"
+	"github.com/armon/go-socks5"
 )
 
 var appConfig AppConfig
