@@ -9,4 +9,4 @@ import:
   - curve25519
   - ssh
   - ssh/agent
-- package: github.com/MOZGIII/go-socks5
+- package: github.com/armon/go-socks5
