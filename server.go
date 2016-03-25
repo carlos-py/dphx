@@ -1,26 +1,34 @@
 package dphx
 
 import (
-	"log"
-
 	"github.com/armon/go-socks5"
 )
 
 var appConfig AppConfig
 
 // ListenAndServe starts the SOCKS server.
-func ListenAndServe() {
-	// Create a SOCKS5 server
+func ListenAndServe(network, addr string) error {
+	server, err := createSocks5Server()
+	if err != nil {
+		return err
+	}
+
+	if err := server.ListenAndServe(network, addr); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func createSocks5Server() (*socks5.Server, error) {
 	conf := &socks5.Config{
 		Dial:     SSHDial,
 		Resolver: DummyResolver{},
 	}
+
 	server, err := socks5.New(conf)
 	if err != nil {
-		log.Fatalf(err.Error())
+		return nil, err
 	}
-	log.Printf("SOCKS5 server is starting at %s", appConfig.LocalAddr)
-	if err := server.ListenAndServe("tcp", appConfig.LocalAddr); err != nil {
-		log.Fatalf(err.Error())
-	}
+	return server, nil
 }

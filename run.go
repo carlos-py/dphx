@@ -1,6 +1,8 @@
 package dphx
 
 import (
+	"log"
+
 	"github.com/kelseyhightower/envconfig"
 )
 
@@ -8,7 +10,11 @@ import (
 func Run() {
 	SetEnv()
 	PrintEnv()
-	ListenAndServe()
+
+	log.Printf("SOCKS5 server is starting at %s", appConfig.LocalAddr)
+	if err := ListenAndServe("tcp", appConfig.LocalAddr); err != nil {
+		log.Fatalln(err.Error())
+	}
 }
 
 // SetEnv loads current env config.
