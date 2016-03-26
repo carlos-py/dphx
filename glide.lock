@@ -1,14 +1,10 @@
 hash: e8ded73f86330e01836be7da398b1eebabed70230dd70269c440cdbaf2eef5c4
-updated: 2016-03-23T00:42:05.725520707+03:00
+updated: 2016-03-26T15:00:22.922643645+03:00
 imports:
 - name: github.com/armon/go-socks5
   version: b34cad17d2fdbb038116de97a36d76995393b87a
 - name: github.com/kelseyhightower/envconfig
   version: cea086319492c3940683ea5e122aa5de70a33923
-- name: github.com/MOZGIII/dphx
-  version: 46b429f8927eeab2216869382c97a9458e87f9fe
-- name: github.com/MOZGIII/go-socks5
-  version: 385bbe4759e6795fe5a1eace7fb860cf4ee8d59e
 - name: golang.org/x/crypto
   version: c197bcf24cde29d3f73c7b4ac6fd41f4384e8af6
   subpackages:
@@ -16,7 +12,7 @@ imports:
   - ssh
   - ssh/agent
 - name: golang.org/x/net
-  version: 35b06af0720201bc2f326773a80767387544f8c4
+  version: 1600a4cd699d70009ec28edfd69d3568f6bd757d
   subpackages:
   - context
 devImports: []
