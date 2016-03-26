@@ -1,7 +1,12 @@
 # dphx
 
-Hi.
+An SSH client that provides a tunnel to the remote network via a local SOCKS 5 server.
 
+Designed to be managed as an unprivileged system service and work all the time at the background. Will only establish connection to SSH host if needed (i.e. when SOCKS request arrives) and disconnect automatically after some inactivity period. At the same time, SOCKS server is always listening for requests, and will manage SSH connection appropriately.
+
+Remote DNS resolution is supported.
+
+First SSH connection happens on first SOCKS request (requiring it to exist, but everything is proxified right now, so that would be any request).
 
 ## Config
 
