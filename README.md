@@ -26,7 +26,7 @@ export DPHX_SSH_PUBLIC_KEYS='/home/me/.ssh/id_rsa,/home/me/.ssh/other_id_rsa'
 # Defaults to $SSH_AUTH_SOCK value.
 export DPHX_SSH_AGENT='/run/user/1337/keyring-blah/ssh'
 
-# SOCK5 server bind address (optional).
+# SOCKS5 server bind address (optional).
 # Defaults to "127.0.0.1:1080".
 export DPHX_SOCKS_ADDR='0.0.0.0:1080'
 ```
