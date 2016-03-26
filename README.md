@@ -18,7 +18,7 @@ The simplest way to install this software is to download a binary for your syste
 
 ### Go tools
 
-To install via `Go` toolchain, use the following command:
+To install via **Go** toolchain, use the following command:
 
 ```
 go get github.com/MOZGIII/dphx/cmd/dphx
