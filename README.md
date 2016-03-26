@@ -10,6 +10,20 @@ Remote DNS resolution is supported.
 
 First SSH connection happens on first SOCKS request (requiring it to exist, but everything is proxified right now, so that would be any request).
 
+## Installation
+
+### GitHub Releases
+
+The simplest way to install this software is to download a binary for your system from the [GitHub Releases](https://github.com/MOZGIII/dphx/releases).
+
+### Go tools
+
+To install via `Go` toolchain, use the following command:
+
+```
+go get github.com/MOZGIII/dphx/cmd/dphx
+```
+
 ## Config
 
 Config is loaded from the process environment.
