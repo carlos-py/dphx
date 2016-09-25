@@ -23,7 +23,7 @@ func ListenAndServe(network, addr string) error {
 func createSocks5Server() (*socks5.Server, error) {
 	conf := &socks5.Config{
 		Dial:     SSHDial,
-		Resolver: DummyResolver{},
+		Resolver: EmptyResolver{},
 	}
 
 	server, err := socks5.New(conf)

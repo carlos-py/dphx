@@ -39,35 +39,12 @@ func ensureSSHClient() error {
 	return nil
 }
 
-func addressForDial(ctx context.Context, addr string) (string, error) {
-	// Parse the address into host and numeric port.
-	host, portString, err := net.SplitHostPort(addr)
-	if err != nil {
-		return "", err
-	}
-
-	// Replace the address with the original address before local
-	// DNS resolution.
-	if newHost := fetchOriginalAddress(ctx); newHost != "" {
-		host = newHost
-	}
-
-	// Join new host and port back.
-	addr = net.JoinHostPort(host, portString)
-
-	return addr, nil
-}
-
 // SSHDial does dial via SSH connection to a remote server.
 func SSHDial(ctx context.Context, network, addr string) (net.Conn, error) {
 	if err := ensureSSHClient(); err != nil {
 		return nil, err
 	}
 
-	addr, err := addressForDial(ctx, addr)
-	if err != nil {
-		return nil, err
-	}
 
 	return sshClient.Dial(network, addr)
 }
