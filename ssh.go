@@ -45,6 +45,7 @@ func SSHDial(ctx context.Context, network, addr string) (net.Conn, error) {
 		return nil, err
 	}
 
+	log.Printf("Dialing to %s via SSH connection %s", addr, sshClient.RemoteAddr())
 
 	return sshClient.Dial(network, addr)
 }
