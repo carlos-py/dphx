@@ -5,7 +5,7 @@ go:
   - tip
 
 install:
-  - bin/setup
+  - go get ./...
 
 script:
   - go build -v ./cmd/dphx
