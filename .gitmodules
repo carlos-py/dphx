@@ -1,0 +1,6 @@
+[submodule "vendor/github.com/armon/go-socks5"]
+	path = vendor/github.com/armon/go-socks5
+	url = https://github.com/armon/go-socks5
+[submodule "vendor/github.com/kelseyhightower/envconfig"]
+	path = vendor/github.com/kelseyhightower/envconfig
+	url = https://github.com/kelseyhightower/envconfig
