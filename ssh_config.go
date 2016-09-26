@@ -2,6 +2,7 @@ package dphx
 
 import (
 	"io/ioutil"
+	"log"
 	"net"
 	"os"
 
@@ -78,6 +79,11 @@ func (s SSHConfig) addAuthsForKeys(auths []ssh.AuthMethod) ([]ssh.AuthMethod, er
 }
 
 func (s SSHConfig) addSignersForAgent(signers []ssh.Signer) ([]ssh.Signer, error) {
+	if s.AgentAddr == "" {
+		log.Println("WARNING: SSH agent connection not configured, not using agent auth")
+		return signers, nil
+	}
+
 	sock, err := net.Dial("unix", s.AgentAddr)
 	if err != nil {
 		return nil, err
