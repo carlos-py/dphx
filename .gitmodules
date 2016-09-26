@@ -4,3 +4,9 @@
 [submodule "vendor/github.com/kelseyhightower/envconfig"]
 	path = vendor/github.com/kelseyhightower/envconfig
 	url = https://github.com/kelseyhightower/envconfig
+[submodule "vendor/golang.org/x/crypto"]
+	path = vendor/golang.org/x/crypto
+	url = https://go.googlesource.com/crypto
+[submodule "vendor/golang.org/x/net"]
+	path = vendor/golang.org/x/net
+	url = https://go.googlesource.com/net
