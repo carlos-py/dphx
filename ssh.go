@@ -25,7 +25,7 @@ func createSSHClient() (*CountingSSHClient, error) {
 		return nil, fmt.Errorf("Failed to dial to SSH server: %s", err.Error())
 	}
 
-	return &CountingSSHClient{client}, nil
+	return NewCountingSSHClient(client), nil
 }
 
 func ensureSSHClient() error {

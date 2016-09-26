@@ -17,6 +17,10 @@ type countedNetConn struct {
 	net.Conn
 }
 
+func NewCountingSSHClient(sshClient *ssh.Client) *CountingSSHClient {
+	return &CountingSSHClient{sshClient}
+}
+
 func (c CountingSSHClient) Dial(network, addr string) (net.Conn, error) {
 	nc, err := c.Client.Dial(network, addr)
 	if err != nil {
