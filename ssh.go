@@ -9,9 +9,9 @@ import (
 	"golang.org/x/net/context"
 )
 
-var sshClient *ssh.Client
+var sshClient *CountingSSHClient
 
-func createSSHClient() (*ssh.Client, error) {
+func createSSHClient() (*CountingSSHClient, error) {
 	sshConfig, err := appConfig.SSH.ClientConfig()
 
 	if err != nil {
@@ -25,7 +25,7 @@ func createSSHClient() (*ssh.Client, error) {
 		return nil, fmt.Errorf("Failed to dial to SSH server: %s", err.Error())
 	}
 
-	return client, nil
+	return &CountingSSHClient{client}, nil
 }
 
 func ensureSSHClient() error {
@@ -44,8 +44,6 @@ func SSHDial(ctx context.Context, network, addr string) (net.Conn, error) {
 	if err := ensureSSHClient(); err != nil {
 		return nil, err
 	}
-
-	log.Printf("Dialing to %s via SSH connection %s", addr, sshClient.RemoteAddr())
 
 	return sshClient.Dial(network, addr)
 }
