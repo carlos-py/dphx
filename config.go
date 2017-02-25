@@ -1,4 +1,4 @@
-package dphx
+package dphx // import "github.com/MOZGIII/dphx"
 
 // AppConfig loads and saves config.
 type AppConfig struct {

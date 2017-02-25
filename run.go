@@ -1,4 +1,4 @@
-package dphx
+package dphx // import "github.com/MOZGIII/dphx"
 
 import (
 	"log"
