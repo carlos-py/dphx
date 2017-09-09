@@ -1,3 +1,6 @@
 .*
+Dockerfile
+LICENSE
+README.md
 bin
 dist
