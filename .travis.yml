@@ -9,4 +9,4 @@ install:
   - go get ./...
 
 script:
-  - go build -v ./cmd/dphx
+  - go build -v ./cmd/sshKraken
