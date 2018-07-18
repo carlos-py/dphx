@@ -1,25 +1,22 @@
-package dphx // import "github.com/MOZGIII/dphx"
+package sshKraken // import "github.com/carlos-py/sshKraken"
 
 import (
 	"log"
-
-	"github.com/kelseyhightower/envconfig"
 )
 
 // Run initializes config and starts SOCKS server.
 func Run() {
-	SetEnv()
-	PrintEnv()
+	config := LoadConfiguration("./config.json")
 
-	log.Printf("SOCKS5 server is starting at %s", appConfig.LocalAddr)
+	appConfig.LocalAddr = "127.0.0.1:1080"
+	appConfig.SSH = config
+
+	printAppConfig(appConfig)
+
+	go EnsureSSHClients()
+
+	log.Printf("Local SOCKS5 server is starting at %s", appConfig.LocalAddr)
 	if err := ListenAndServe("tcp", appConfig.LocalAddr); err != nil {
 		log.Fatalln(err.Error())
 	}
-}
-
-// SetEnv loads current env config.
-func SetEnv() {
-	envconfig.MustProcess("DPHX", &appConfig)
-	envconfig.MustProcess("DPHX_SSH", &appConfig.SSH)
-	SetSSHConfigDefaults(&appConfig.SSH)
 }

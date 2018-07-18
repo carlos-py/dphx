@@ -41,7 +41,7 @@ init() {
 
   # Ensure optinal vars are set correctly
   [ -z "$RELEASE_DIST_DIR"]    && RELEASE_DIST_DIR="dist"
-  [ -z "$RELEASE_GO_PACKAGE" ] && RELEASE_GO_PACKAGE="./cmd/dphx"
+  [ -z "$RELEASE_GO_PACKAGE" ] && RELEASE_GO_PACKAGE="./cmd/sshKraken"
   [ -z "$RELEASE_GIT_BRANCH" ] && RELEASE_GIT_BRANCH="master"
   [ -z "$RELEASE_GIT_REMOTE" ] && RELEASE_GIT_REMOTE="origin"
 }

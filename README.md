@@ -1,53 +1,46 @@
-# dphx
+# sshKraken
 
 [![Build Status](https://travis-ci.org/MOZGIII/dphx.svg?branch=master)](https://travis-ci.org/MOZGIII/dphx)
 
-An SSH client that provides a tunnel to the remote network via a local SOCKS 5 server.
+A SOCKS 5 server that provides a local tunnel to multiple SSH Server connections. Traffic is routed based on URL string matching specified in each SSH server configuration.
 
-Designed to be managed as an unprivileged system service and work all the time at the background. Will only establish connection to SSH host if needed (i.e. when SOCKS request arrives) and disconnect automatically after some inactivity period. At the same time, SOCKS server is always listening for requests, and will manage SSH connection appropriately.
+Designed to be managed as an unprivileged system service and run in the background. Will establish all connections at launch and will attempt to re-establish connection if necessary (ie. SSH connection is lost).
 
 Remote DNS resolution is supported.
 
-First SSH connection happens on first SOCKS request (requiring it to exist, but everything is proxified right now, so that would be any request).
-
 ## Installation
-
-### GitHub Releases
-
-The simplest way to install this software is to download a binary for your system from the [GitHub Releases](https://github.com/MOZGIII/dphx/releases).
-
-### Go tools
 
 To install via **Go** toolchain, use the following command:
 
 ```
-go get github.com/MOZGIII/dphx/cmd/dphx
+go get github.com/carlos-py/sshKraken/cmd/sshKraken
 ```
 
-## Config
+## Configuration
 
-Config is loaded from the process environment.
+SSH Server configuration is loaded from a JSON file. Each JSON object represents 1 server configuration.
 
-A sample settings file along with options description and example values is listed below.
+- host: Server address and SSH port
+- key: Private SSH key for connecting to server. **Must use full root path!**
+- username: SSH username
+- urlMatch: Socks proxy traffic containing this string will be routed to this server. The default route is the first server configured.
+
+A sample config file below:
 
 ```bash
-# SSH server address.
-export DPHX_SSH_ADDR='example.net'
-
-# SSH username.
-export DPHX_SSH_USER='user'
-
-# SSH password (optional).
-export DPHX_SSH_PASSWORD='password'
-
-# SSH public key files list (optional).
-export DPHX_SSH_PUBLIC_KEYS='/home/me/.ssh/id_rsa,/home/me/.ssh/other_id_rsa'
-
-# SSH agent address, usually a unix socket.
-# Defaults to $SSH_AUTH_SOCK value.
-export DPHX_SSH_AGENT='/run/user/1337/keyring-blah/ssh'
-
-# SOCKS5 server bind address (optional).
-# Defaults to "127.0.0.1:1080".
-export DPHX_SOCKS_ADDR='0.0.0.0:1080'
+[
+   {
+      "host":"54.183.113.4:22",
+      "key":"/home/toor/Downloads/thinkpad2018.pem",
+      "username":"ubuntu",
+      "urlMatch":"twitter.com"
+   },
+   {
+      "host":"54.193.33.75:22",
+      "key":"/home/toor/Downloads/thinkpad2018.pem",
+      "username":"ubuntu",
+      "urlMatch":"canihazip.com"
+   }
+]
 ```
+

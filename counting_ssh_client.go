@@ -1,4 +1,4 @@
-package dphx
+package sshKraken
 
 import (
 	"log"
@@ -27,7 +27,7 @@ func (c CountingSSHClient) Dial(network, addr string) (net.Conn, error) {
 		return nil, err
 	}
 
-	log.Printf("Dialing to %s via SSH connection %s", addr, sshClient.RemoteAddr())
+	log.Printf("Dialing to %s via SSH connection %s", addr, c.Client.Conn.RemoteAddr())
 	return countedNetConn{&c, addr, nc}, nil
 }
 

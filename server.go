@@ -1,4 +1,4 @@
-package dphx // import "github.com/MOZGIII/dphx"
+package sshKraken // import "github.com/carlos-py/sshKraken"
 
 import (
 	"github.com/armon/go-socks5"

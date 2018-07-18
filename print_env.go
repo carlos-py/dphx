@@ -1,43 +1,21 @@
-package dphx // import "github.com/MOZGIII/dphx"
+package sshKraken // import "github.com/carlos-py/sshKraken"
 
 import (
 	"fmt"
 )
 
-// PrintEnv pirnts current environment.
-func PrintEnv() {
-	fmt.Printf("ENV:\n")
-	printAppConfig(appConfig)
-	fmt.Printf("\n")
-}
-
 func printAppConfig(cfg AppConfig) {
-	print("SSH Server Address", cfg.SSH.ServerAddr)
-	print("SSH Username", cfg.SSH.Username)
 
-	if cfg.SSH.Password == "" {
-		print("SSH Password", "<empty>")
-	} else {
-		print("SSH Password", "[hidden]")
+	fmt.Printf("Starting sshKraken... \n\n")
+	countServers := 0
+	for _, host := range cfg.SSH {
+		countServers++
+		fmt.Printf("SSH tunnel #%v configuration \n", countServers)
+		fmt.Printf("\t Hostname: %v \n", host.Host)
+		fmt.Printf("\t Username: %v \n", host.Username)
+		fmt.Printf("\t SSH Key: %v \n", host.Key)
+		fmt.Printf("\t URL Match: %v \n\n", host.URLMatch)
+
 	}
 
-	printArray("SSH Public Keys", cfg.SSH.PublicKeys)
-	print("SSH Agent Address", cfg.SSH.AgentAddr)
-	print("SOCKS5 Server Address", cfg.LocalAddr)
-}
-
-func print(key, value string) {
-	fmt.Printf("  %-24s %s\n", key+":", value)
-}
-
-func printArray(key string, values []string) {
-	fmt.Printf("  %-24s\n", key+":")
-
-	if len(values) == 0 {
-		fmt.Printf("    <empty>\n")
-	} else {
-		for _, value := range values {
-			fmt.Printf("    -  %s\n", value)
-		}
-	}
 }
