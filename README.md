@@ -13,7 +13,7 @@ Remote DNS resolution is supported.
 To install via **Go** toolchain, use the following command:
 
 ```
-go get github.com/carlos-py/sshKraken/cmd/sshKraken
+go get github.com/cvasq/sshKraken/cmd/sshKraken
 ```
 
 ## Configuration

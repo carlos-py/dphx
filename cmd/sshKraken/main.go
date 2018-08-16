@@ -1,7 +1,7 @@
-package main // import "github.com/carlos-py/sshKraken/cmd/sshKraken"
+package main // import "github.com/cvasq/sshKraken/cmd/sshKraken"
 
 import (
-	"github.com/carlos-py/sshKraken"
+	"github.com/cvasq/sshKraken"
 )
 
 func main() {
