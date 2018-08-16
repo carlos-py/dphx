@@ -1,6 +1,6 @@
 # sshKraken
 
-[![Build Status](https://travis-ci.org/carlos-py/sshKraken.svg?branch=master)](https://travis-ci.org/carlos-py/sshKraken)
+[![Build Status](https://travis-ci.org/cvasq/sshKraken.svg?branch=master)](https://travis-ci.org/cvasq/sshKraken)
 
 A SOCKS 5 server that provides a local tunnel to multiple SSH Server connections. Traffic is routed based on URL string matching specified in each SSH server configuration.
 
