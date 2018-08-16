@@ -1,4 +1,4 @@
-package sshKraken // import "github.com/carlos-py/sshKraken"
+package sshKraken // import "github.com/cvasq/sshKraken"
 import (
 	"encoding/json"
 	"fmt"
